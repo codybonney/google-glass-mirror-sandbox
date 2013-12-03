@@ -105,6 +105,25 @@ limitations under the License.
         </div>
     </div>
 
+    <form action="/" method="post">
+        <input type="hidden" name="operation" value="insertItem">
+
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" class="span4"></textarea>
+
+        <br />
+
+        <label for="imageUrl">Image URL</label>
+        <input id="imageUrl" type="input" name="imageUrl" value="/static/images/panther.jpg">
+
+        <br />
+
+        <input type="hidden" name="contentType" value="image/jpeg">
+        <button class="btn" type="submit">Send</button>
+    </form>
+
+    <!--
     <div class="row">
         <div class="span4">
             <h2>Timeline</h2>
@@ -239,6 +258,7 @@ limitations under the License.
             {% endif %}
         </div>
     </div>
+    -->
 </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
