@@ -107,7 +107,7 @@ limitations under the License.
 
     <form action="/" method="post">
         <input type="hidden" name="operation" value="insertItem">
-
+        <input type="hidden" name="contentType" value="image/jpeg">
 
         <label for="message">Message</label>
         <textarea id="message" name="message" class="span4"></textarea>
@@ -117,9 +117,8 @@ limitations under the License.
         <label for="imageUrl">Image URL</label>
         <input id="imageUrl" type="input" name="imageUrl" value="/static/images/panther.jpg">
 
-        <br />
+        <br /><br />
 
-        <input type="hidden" name="contentType" value="image/jpeg">
         <button class="btn" type="submit">Send</button>
     </form>
 
