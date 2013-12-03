@@ -1,5 +1,6 @@
 This is a sandbox that I'm currently using to learh about the Google Glass Mirror API.
 
+`appcfg.py --oauth2 update .` to deploy
 
 Google Mirror API's Quickstart for Python
 ========================
