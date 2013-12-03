@@ -12,22 +12,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Add the library location to the path
-import sys
-sys.path.insert(0, 'lib')
+"""Datastore models for Starter Project"""
 
-import webapp2
-
-from attachmentproxy.handler import ATTACHMENT_PROXY_ROUTES
-from main_handler import MAIN_ROUTES
-from notify.handler import NOTIFY_ROUTES
-from oauth.handler import OAUTH_ROUTES
-from signout.handler import SIGNOUT_ROUTES
+__author__ = 'alainv@google.com (Alain Vongsouvanh)'
 
 
-ROUTES = (
-    ATTACHMENT_PROXY_ROUTES + MAIN_ROUTES + NOTIFY_ROUTES + OAUTH_ROUTES +
-    SIGNOUT_ROUTES)
+from google.appengine.ext import db
+
+from oauth2client.appengine import CredentialsProperty
 
 
-app = webapp2.WSGIApplication(ROUTES)
+class Credentials(db.Model):
+  """Datastore entity for storing OAuth2.0 credentials.
+
+  The CredentialsProperty is provided by the Google API Python Client, and is
+  used by the Storage classes to store OAuth 2.0 credentials in the data store.
+  """
+  credentials = CredentialsProperty()

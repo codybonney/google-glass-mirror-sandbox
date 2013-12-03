@@ -1,4 +1,4 @@
-# Copyright (C) 2013 Google Inc.
+# Copyright (C) 2010 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,22 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Add the library location to the path
-import sys
-sys.path.insert(0, 'lib')
+"""Utility module to import a JSON module
 
-import webapp2
+Hides all the messy details of exactly where
+we get a simplejson module from.
+"""
 
-from attachmentproxy.handler import ATTACHMENT_PROXY_ROUTES
-from main_handler import MAIN_ROUTES
-from notify.handler import NOTIFY_ROUTES
-from oauth.handler import OAUTH_ROUTES
-from signout.handler import SIGNOUT_ROUTES
+__author__ = 'jcgregorio@google.com (Joe Gregorio)'
 
 
-ROUTES = (
-    ATTACHMENT_PROXY_ROUTES + MAIN_ROUTES + NOTIFY_ROUTES + OAUTH_ROUTES +
-    SIGNOUT_ROUTES)
-
-
-app = webapp2.WSGIApplication(ROUTES)
+try: # pragma: no cover
+  # Should work for Python2.6 and higher.
+  import json as simplejson
+except ImportError: # pragma: no cover
+  try:
+    import simplejson
+  except ImportError:
+    # Try to import from django, should work on App Engine
+    from django.utils import simplejson
