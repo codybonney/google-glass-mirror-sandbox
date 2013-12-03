@@ -1,3 +1,6 @@
+This is a sandbox that I'm currently using to learh about the Google Glass Mirror API.
+
+
 Google Mirror API's Quickstart for Python
 ========================
 
